@@ -32,6 +32,7 @@
 .tools
 grafana
 .cursor
+.env
 
 # debug
 npm-debug.log*
