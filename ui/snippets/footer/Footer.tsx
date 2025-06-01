@@ -16,6 +16,7 @@ import { copy } from 'toolkit/utils/htmlEntities';
 import IconSvg from 'ui/shared/IconSvg';
 import { CONTENT_MAX_WIDTH } from 'ui/shared/layout/utils';
 import NetworkAddToWallet from 'ui/shared/NetworkAddToWallet';
+import NetworkLogo from 'ui/snippets/networkMenu/NetworkLogo';
 
 import FooterLinkItem from './FooterLinkItem';
 import IntTxsIndexingStatus from './IntTxsIndexingStatus';
@@ -23,8 +24,8 @@ import getApiVersionUrl from './utils/getApiVersionUrl';
 
 const MAX_LINKS_COLUMNS = 4;
 
-const FRONT_VERSION_URL = `https://github.com/blockscout/frontend/tree/${ config.UI.footer.frontendVersion }`;
-const FRONT_COMMIT_URL = `https://github.com/blockscout/frontend/commit/${ config.UI.footer.frontendCommit }`;
+const FRONT_VERSION_URL = `https://github.com/w-chain/blockscout-fe/tree/${ config.UI.footer.frontendVersion }`;
+const FRONT_COMMIT_URL = `https://github.com/w-chain/blockscout-fe/commit/${ config.UI.footer.frontendCommit }`;
 
 const Footer = () => {
 
@@ -43,30 +44,30 @@ const Footer = () => {
       text: 'Submit an issue',
       url: issueUrl,
     },
-    {
-      icon: 'social/git' as const,
-      iconSize: '18px',
-      text: 'Contribute',
-      url: 'https://github.com/blockscout/blockscout',
-    },
-    {
-      icon: 'social/twitter' as const,
-      iconSize: '18px',
-      text: 'X (ex-Twitter)',
-      url: 'https://x.com/blockscout',
-    },
-    {
-      icon: 'social/discord' as const,
-      iconSize: '24px',
-      text: 'Discord',
-      url: 'https://discord.gg/blockscout',
-    },
-    {
-      icon: 'brands/blockscout' as const,
-      iconSize: '18px',
-      text: 'All chains',
-      url: 'https://www.blockscout.com/chains-and-projects',
-    },
+    // {
+    //   icon: 'social/git' as const,
+    //   iconSize: '18px',
+    //   text: 'Contribute',
+    //   url: 'https://github.com/blockscout/blockscout',
+    // },
+    // {
+    //   icon: 'social/twitter' as const,
+    //   iconSize: '18px',
+    //   text: 'X (ex-Twitter)',
+    //   url: 'https://x.com/blockscout',
+    // },
+    // {
+    //   icon: 'social/discord' as const,
+    //   iconSize: '24px',
+    //   text: 'Discord',
+    //   url: 'https://discord.gg/blockscout',
+    // },
+    // {
+    //   icon: 'brands/blockscout' as const,
+    //   iconSize: '18px',
+    //   text: 'All chains',
+    //   url: 'https://www.blockscout.com/chains-and-projects',
+    // },
     {
       icon: 'donate' as const,
       iconSize: '20px',
@@ -120,6 +121,7 @@ const Footer = () => {
 
     return (
       <Box gridArea={ gridArea }>
+        <NetworkLogo/>
         <Flex columnGap={ 2 } textStyle="xs" alignItems="center">
           <span>Made with</span>
           <Link href="https://www.blockscout.com" target="_blank" display="inline-flex" color={ logoColor } _hover={{ color: logoColor }}>
