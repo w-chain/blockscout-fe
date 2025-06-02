@@ -3,6 +3,12 @@
 echo
 echo "⬇️  Downloading external assets..."
 
+# Check if the .env file exists and load ENVs from it
+if [ -f .env ]; then
+    source .env
+    export $(cut -d= -f1 .env)
+fi
+
 # Check if the number of arguments provided is correct
 if [ "$#" -ne 1 ]; then
   echo "🛑 Error: incorrect amount of arguments. Usage: $0 <ASSETS_DIR>."

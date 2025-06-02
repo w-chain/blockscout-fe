@@ -56,7 +56,20 @@ if [ "$NEXT_PUBLIC_APP_ENV" != "pw" ]; then
     # Rename the new sprite file
     mv $target_dir/sprite.svg "$target_dir/sprite.${HASH}.svg"
 
-    export NEXT_PUBLIC_ICON_SPRITE_HASH=${HASH}
+    # Append NEXT_PUBLIC_ICON_SPRITE_HASH to envs.js file
+    envs_file="./public/assets/envs.js"
+    if [ -f "$envs_file" ]; then
+        # Remove the closing brace temporarily
+        sed -i.bak '$ d' "$envs_file"
+        # Add the new environment variable
+        echo "NEXT_PUBLIC_ICON_SPRITE_HASH: \"${HASH}\"," >> "$envs_file"
+        # Add the closing brace back
+        echo "}" >> "$envs_file"
+        # Remove backup file
+        rm "$envs_file.bak"
+    else
+        echo "Warning: envs.js file not found at $envs_file"
+    fi
 
     # Skip registry creation in development environment
     # just to make the dev build faster
