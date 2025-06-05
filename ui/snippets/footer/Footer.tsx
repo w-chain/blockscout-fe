@@ -158,6 +158,8 @@ const Footer = () => {
     as: 'footer',
     borderTopWidth: '1px',
     borderTopColor: 'border.divider',
+    bg: '#043F83',
+    color: '#FFFFFF',
   };
 
   const contentProps: GridProps = {

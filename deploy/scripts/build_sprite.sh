@@ -71,6 +71,8 @@ if [ "$NEXT_PUBLIC_APP_ENV" != "pw" ]; then
         echo "Warning: envs.js file not found at $envs_file"
     fi
 
+    export NEXT_PUBLIC_ICON_SPRITE_HASH="${HASH}"
+
     # Skip registry creation in development environment
     # just to make the dev build faster
     # remove this condition if you want to create the registry file in development environment
