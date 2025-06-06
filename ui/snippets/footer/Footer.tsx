@@ -122,6 +122,9 @@ const Footer = () => {
     return (
       <Box gridArea={ gridArea }>
         <NetworkLogo/>
+        <Text mb={ 3 } fontSize="xs">
+          W Scan is the official Block Explorer for <Link href="https://w-chain.com" target="_blank" >W Chain Network</Link>.
+        </Text>
         <Flex columnGap={ 2 } textStyle="xs" alignItems="center">
           <span>Made with</span>
           <Link href="https://www.blockscout.com" target="_blank" display="inline-flex" color={ logoColor } _hover={{ color: logoColor }}>
@@ -133,7 +136,8 @@ const Footer = () => {
           </Link>
         </Flex>
         <Text mt={ 3 } fontSize="xs">
-          Blockscout is a tool for inspecting and analyzing EVM based blockchains. Blockchain explorer for Ethereum Networks.
+          Blockscout is an open-source tool to index and explore EVM-compatible networks.
+          It's commited to being transparent and trusted by decentralized community.
         </Text>
         <Box mt={ 6 } alignItems="start" textStyle="xs">
           { apiVersionUrl && (
