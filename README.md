@@ -47,7 +47,7 @@ graph TD
     Indexer -->|Indexing| Node
     Indexer -->|Write Data| DB
     
-    UI -.->|Direct RPC (Wallet Ops)| Node
+    UI -.->|"Direct RPC (Wallet Ops)"| Node
 
     classDef component fill:#e1f5fe,stroke:#01579b,stroke-width:2px;
     classDef external fill:#f3e5f5,stroke:#4a148c,stroke-width:2px;
