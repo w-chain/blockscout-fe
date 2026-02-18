@@ -36,7 +36,7 @@ graph TD
         DB[(PostgreSQL)]
     end
     
-    Node[W Chain Node (RPC)]
+    Node["W Chain Node (RPC)"]
 
     %% Flows
     User -->|1. Load Page| UI
